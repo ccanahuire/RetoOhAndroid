@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">RetoOh</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+
+    <string name="lang_common_action_next">Next</string>
+
+    <string name="lang_social_facebook_sign_in">Sign in with Facebook</string>
+
+    <string name="lang_welcome_title">Get Started</string>
+    <string name="lang_welcome_message">Welcome to \"Reto Android\". In this application you will see an example of Firebase authentication, as well as some interesting UI and UX that you might find interesting.</string>
+    <string name="lang_welcome_disclaimer">This application will be in the Google Play Store for a limited period of time. All the personal information you provide within this application will be deleted when this app is removed from the market.</string>
+
+    <string name="lang_login_title">Sign in</string>
+    <string name="lang_login_message">You can sign in either by using your mobile phone or using your Facebook account.</string>
+    <string name="lang_login_phone_number_caption">Phone Number</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
