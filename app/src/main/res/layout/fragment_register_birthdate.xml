@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.login.LoginFragment">
+    tools:context=".ui.register.RegisterBirthdateFragment">
 
     <ImageView
-        android:id="@+id/iv_icon_login"
+        android:id="@+id/iv_icon_register_birthdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_account_circle_black_small" />
+        app:srcCompat="@drawable/ic_date_range_small" />
 
     <TextView
         android:id="@+id/tv_title"
@@ -23,72 +23,57 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:text="@string/lang_login_title"
+        android:text="@string/lang_register_birthdate_title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_icon_login" />
+        app:layout_constraintTop_toBottomOf="@id/iv_icon_register_birthdate" />
 
     <TextView
-        android:id="@+id/tv_message"
+        android:id="@+id/tv_login_message"
         style="@style/TextAppearance.MaterialComponents.Body1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
-        android:text="@string/lang_login_message"
+        android:text="@string/lang_register_birthdate_message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_phone_number"
+        android:id="@+id/til_birthdate"
         style="@style/Theme.RetoOh.TextInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
+        android:hint="@string/lang_register_birthdate_date_caption"
         android:orientation="horizontal"
         android:transitionGroup="true"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_message"
+        app:layout_constraintTop_toBottomOf="@id/tv_login_message"
         tools:targetApi="lollipop">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_phone_number"
+            android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/lang_login_phone_number_caption"
-            android:inputType="phone"
-            android:maxLength="11"
+            android:inputType="date"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_sign_in"
+        android:id="@+id/btn_finish"
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
-        android:text="@string/lang_common_action_sign_in"
+        android:text="@string/lang_common_action_finish"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/til_phone_number" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_sign_in_facebook"
-        style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:padding="15dp"
-        android:text="@string/lang_social_facebook_sign_in"
-        app:backgroundTint="@color/socialFacebookBackground"
-        app:icon="@drawable/ic_facebook_white_small"
-        app:iconPadding="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_sign_in" />
+        app:layout_constraintTop_toBottomOf="@id/til_birthdate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

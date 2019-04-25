@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.ccanahuire.retooh.R
 import com.ccanahuire.retooh.ui.welcome.WelcomeFragment
+import com.ccanahuire.retooh.utils.TransitionHelper
 
 class MainActivity : AppCompatActivity(), NavigationHost {
 
@@ -13,7 +14,7 @@ class MainActivity : AppCompatActivity(), NavigationHost {
         setContentView(R.layout.activity_main)
 
         if (savedInstanceState == null) {
-            navigateTo(WelcomeFragment(), false)
+            navigateToWelcome()
         }
     }
 
@@ -27,5 +28,11 @@ class MainActivity : AppCompatActivity(), NavigationHost {
         }
 
         transaction.commit()
+    }
+
+    private fun navigateToWelcome() {
+        val welcomeFragment = WelcomeFragment()
+        TransitionHelper.setDefaultTransition(welcomeFragment)
+        navigateTo(welcomeFragment, false)
     }
 }

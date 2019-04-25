@@ -6,4 +6,6 @@
 
     <color name="backgroundColor">#FFFFFF</color>
     <color name="textColorSecondary">#888888</color>
+
+    <color name="socialFacebookBackground">#3B5998</color>
 </resources>
