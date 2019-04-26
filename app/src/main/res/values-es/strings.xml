@@ -25,7 +25,7 @@
     <string name="lang_login_phone_number_caption">Número telefónico</string>
     <string name="lang_login_phone_number_validation_length">El número telefónico debe tener 9 dígitos.</string>
 
-    <string name="lang_phone_validation_title">Ingres el código</string>
+    <string name="lang_phone_validation_title">Ingrese el código</string>
     <string name="lang_phone_validation_message">Un SMS se ha enviado a tu número telefónico %s. Por favor ingresa el código recibido para continuar.</string>
     <string name="lang_phone_validation_code_caption">Codigo de verificación</string>
     <string name="lang_phone_validation_code_validation_length">El código de verificación debe tener 6 dígitos.</string>
@@ -33,7 +33,7 @@
     <string name="lang_phone_validation_code_unavailable">La validación de número telefónico esta temporalmente fuera de servicio, por favor intente nuevamente más tarde.</string>
     <string name="lang_phone_validation_code_resend_message">Se ha enviado un nuevo código a tu teléfono.</string>
 
-    <string name="lang_fingerprint_validation_title">Identificación por Huella Digital</string>
+    <string name="lang_fingerprint_validation_title">Huella Digital</string>
     <string name="lang_fingerprint_validation_message">Tu seguridad es muy importante para nosotros. Por favor coloque su dedo sobre el sensor de huella digital para poder validar tu identidad.</string>
     <string name="lang_fingerprint_validation_fingerprint_mismatch">Tu huella digital no coincida con ninguna de las que está registrada en tu teléfono.</string>
 
