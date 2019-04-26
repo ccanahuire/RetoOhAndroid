@@ -4,6 +4,8 @@
     package="com.ccanahuire.retooh">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RetoOh"
         tools:ignore="GoogleAppIndexingWarning">
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
@@ -33,7 +36,6 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.splash.SplashActivity"
             android:label="@string/app_name"
@@ -45,7 +47,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.MainActivity"
             android:label="@string/title_activity_welcome"
@@ -58,6 +59,12 @@
             android:theme="@style/Theme.RetoOh.NoActionBar" />
         <activity
             android:name=".ui.RegistrationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.RetoOh.NoActionBar" />
+
+
+        <activity
+            android:name=".ui.fingerprint.FingerprintValidationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.RetoOh.NoActionBar" />
     </application>

@@ -11,6 +11,8 @@ import com.ccanahuire.retooh.model.UserData
 import com.ccanahuire.retooh.ui.HomeActivity
 import com.ccanahuire.retooh.ui.MainActivity
 import com.ccanahuire.retooh.ui.RegistrationActivity
+import com.ccanahuire.retooh.ui.fingerprint.FingerprintValidationActivity
+import com.ccanahuire.retooh.utils.BiometricUtils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -49,7 +51,14 @@ class SplashActivity : AppCompatActivity() {
                     if (userData == null) {
                         navigateToRegistrationScreen()
                     } else {
-                        navigateToHomeScreen(userData)
+                        if (BiometricUtils.isSdkVersionSupported()
+                                && BiometricUtils.isHardwareSupported(this@SplashActivity)
+                                && BiometricUtils.isFingerprintAvailable(this@SplashActivity)
+                            && BiometricUtils.isPermissionGranted(this@SplashActivity)) {
+                            navigateToFingerprintValidation(userData)
+                        } else {
+                            navigateToHomeScreen(userData)
+                        }
                     }
                 }
             }
@@ -75,6 +84,11 @@ class SplashActivity : AppCompatActivity() {
 
     private fun navigateToHomeScreen(userData: UserData) {
         HomeActivity.start(this, userData)
+        finish()
+    }
+
+    private fun navigateToFingerprintValidation(userData: UserData) {
+        FingerprintValidationActivity.start(this, userData)
         finish()
     }
 }

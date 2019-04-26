@@ -14,6 +14,9 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.ccanahuire.retooh.R
+import com.ccanahuire.retooh.contract.UserDataFirebaseContract
+import com.ccanahuire.retooh.model.UserData
+import com.ccanahuire.retooh.ui.HomeActivity
 import com.ccanahuire.retooh.ui.NavigationHost
 import com.ccanahuire.retooh.ui.RegistrationActivity
 import com.ccanahuire.retooh.ui.components.watcher.OnChangeTextWatcher
@@ -26,6 +29,10 @@ import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import java.util.concurrent.TimeUnit
 
 private const val ARG_PHONE = "phone"
@@ -37,6 +44,7 @@ class PhoneValidationFragment : Fragment() {
     private var storedResendToken: PhoneAuthProvider.ForceResendingToken? = null
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var database: FirebaseDatabase
 
     private lateinit var codeEditText: EditText
     private lateinit var codeTextInputLayout: TextInputLayout
@@ -61,6 +69,8 @@ class PhoneValidationFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance()
+
         auth.useAppLanguage()
         phoneArg = arguments?.getString(ARG_PHONE)!!
         sendVerificationCode(null)
@@ -119,6 +129,10 @@ class PhoneValidationFragment : Fragment() {
         navigationHost = null
     }
 
+    override fun onStop() {
+        super.onStop()
+    }
+
     private fun validateForm(): Boolean {
         if (codeEditText.text.length < 6) {
             codeTextInputLayout.error = getString(R.string.lang_phone_validation_code_validation_length)
@@ -142,17 +156,21 @@ class PhoneValidationFragment : Fragment() {
         val callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-                signInWithFirebaseCredentials(credential)
+                if (context != null) {
+                    signInWithFirebaseCredentials(credential)
+                }
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
-                AlertDialog.Builder(context)
-                    .setMessage(R.string.lang_phone_validation_code_unavailable)
-                    .setPositiveButton(getString(R.string.lang_common_action_ok)) { _, _ ->
-                        navigationHost?.navigateBack()
-                    }
-                    .setCancelable(false)
-                    .show()
+                if (context != null) {
+                    AlertDialog.Builder(context)
+                        .setMessage(R.string.lang_phone_validation_code_unavailable)
+                        .setPositiveButton(getString(R.string.lang_common_action_ok)) { _, _ ->
+                            navigationHost?.navigateBack()
+                        }
+                        .setCancelable(false)
+                        .show()
+                }
             }
 
             override fun onCodeSent(
@@ -194,12 +212,11 @@ class PhoneValidationFragment : Fragment() {
             }
         }
     }
-
     private fun signInWithFirebaseCredentials(credential: AuthCredential) {
         displayLoading()
         auth.signInWithCredential(credential).addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                navigateToRegisterName()
+                processSession()
             } else {
                 hideLoading()
                 codeTextInputLayout.error = getString(R.string.lang_phone_validation_code_validation_valid)
@@ -207,10 +224,40 @@ class PhoneValidationFragment : Fragment() {
         }
     }
 
+    private fun processSession() {
+        if (auth.currentUser != null) {
+            val reference = database.reference
+            val userDataListener = object : ValueEventListener {
+                override fun onCancelled(databaseError: DatabaseError) {
+                    navigateToRegisterName()
+                }
+
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val userData = dataSnapshot.getValue(UserData::class.java)
+                    if (userData == null) {
+                        navigateToRegisterName()
+                    } else {
+                        navigateToHomeScreen(userData)
+                    }
+                }
+            }
+
+            reference.child(UserDataFirebaseContract.CHILD_USER).child(auth.currentUser!!.uid)
+                .addListenerForSingleValueEvent(userDataListener)
+        }
+    }
+
     private fun navigateToRegisterName() {
         val intent = Intent(context, RegistrationActivity::class.java)
         startActivity(intent)
         activity?.finish()
+    }
+
+    private fun navigateToHomeScreen(userData: UserData) {
+        if (context != null) {
+            HomeActivity.start(context!!, userData)
+            activity?.finish()
+        }
     }
 
     private fun displayLoading() {

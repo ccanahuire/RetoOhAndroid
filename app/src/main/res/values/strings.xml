@@ -36,6 +36,10 @@
     <string name="lang_phone_validation_code_unavailable">Phone validation is temporary unavailable, please try again later.</string>
     <string name="lang_phone_validation_code_resend_message">A new code has been sent to your phone.</string>
 
+    <string name="lang_fingerprint_validation_title">Fingerprint identification</string>
+    <string name="lang_fingerprint_validation_message">Your security is very important to us. Please put your finger in the fingerprint sensor in order to verify your identity.</string>
+    <string name="lang_fingerprint_validation_fingerprint_mismatch">Your fingerprint does not match with any registered in your phone.</string>
+
     <string name="lang_register_name_title">Name</string>
     <string name="lang_register_name_message">Great! You are almost ready, just a couple of steps more. Please provide us your name.</string>
     <string name="lang_register_name_name_caption">Name</string>
