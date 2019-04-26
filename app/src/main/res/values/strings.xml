@@ -1,12 +1,23 @@
 <resources>
-    <string name="app_name">RetoOh</string>
+    <string name="facebook_app_id">402116823675078</string>
+    <string name="fb_login_protocol_scheme">fb402116823675078</string>
+
+    <string name="app_name">Reto Android</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
 
+    <string name="lang_common_action_ok">Ok</string>
     <string name="lang_common_action_next">Next</string>
     <string name="lang_common_action_finish">Finish</string>
     <string name="lang_common_action_sign_in">Sign In</string>
+    <string name="lang_common_action_sign_out">Sign Out</string>
+    <string name="lang_common_action_resend">Resend</string>
+    <string name="lang_common_action_verify">Verify</string>
+
+    <string name="lang_common_action_logged_out">Your session has expired.</string>
 
     <string name="lang_social_facebook_sign_in">Sign in with Facebook</string>
+
+    <string name="lang_loading_title">Just a sec…</string>
 
     <string name="lang_welcome_title">Get Started</string>
     <string name="lang_welcome_message">Welcome to \"Reto Android\". In this application you will see an example of Firebase authentication, as well as some interesting UI and UX that you might find interesting.</string>
@@ -17,18 +28,38 @@
     <string name="lang_login_phone_number_caption">Phone Number</string>
     <string name="lang_login_phone_number_validation_length">Phone number must have 9 digits.</string>
 
+    <string name="lang_phone_validation_title">Enter code</string>
+    <string name="lang_phone_validation_message">A SMS has been sent to your phone %s. Please enter the code that you have received to continue.</string>
+    <string name="lang_phone_validation_code_caption">Verification code</string>
+    <string name="lang_phone_validation_code_validation_length">Validation code must have 6 digits.</string>
+    <string name="lang_phone_validation_code_validation_valid">Validation code is not valid.</string>
+    <string name="lang_phone_validation_code_unavailable">Phone validation is temporary unavailable, please try again later.</string>
+    <string name="lang_phone_validation_code_resend_message">A new code has been sent to your phone.</string>
+
     <string name="lang_register_name_title">Name</string>
     <string name="lang_register_name_message">Great! You are almost ready, just a couple of steps more. Please provide us your name.</string>
     <string name="lang_register_name_name_caption">Name</string>
     <string name="lang_register_name_lastname_caption">Last Name</string>
+    <string name="lang_register_name_validation_name_required">Your name must not be empty.</string>
+    <string name="lang_register_name_validation_last_name_required">Your last name must no be empty.</string>
 
     <string name="lang_register_birthdate_title">Birth date</string>
     <string name="lang_register_birthdate_message">Please enter your birth date to finish the registration process.</string>
+    <string name="lang_register_birthdate_validation_required">You must provide your birthdate.</string>
+    <string name="lang_register_birthdate_service_unavailable">Service is temporary unavailable. Please try again later.</string>
 
     <string name="lang_register_birthdate_date_caption">Birth date</string>
 
+
+    <string name="lang_home_welcome">Welcome %s</string>
+    <string name="lang_home_message">The information you provided are:</string>
+    <string name="lang_home_name">Name: %s</string>
+    <string name="lang_home_last_name">Last name: %s</string>
+    <string name="lang_home_age">Age: %d (calculated)</string>
+    <string name="lang_home_birthdate">Birthdate: %s</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_home">Start</string>
     <string name="action_settings">Settings</string>
 </resources>

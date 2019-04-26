@@ -2,34 +2,31 @@ package com.ccanahuire.retooh.ui
 
 import android.os.Bundle
 import androidx.annotation.IdRes
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.ccanahuire.retooh.R
 import com.ccanahuire.retooh.ui.loading.LoadingFragment
-import com.ccanahuire.retooh.ui.welcome.WelcomeFragment
+import com.ccanahuire.retooh.ui.register.RegisterNameFragment
 import com.ccanahuire.retooh.utils.TransitionHelper
 
-class MainActivity : NavigationHostActivity() {
+class RegistrationActivity : NavigationHostActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_registration)
+
+        if (savedInstanceState == null) {
+            navigateToRegisterName()
+        }
+    }
 
     @IdRes
     override fun containerId(): Int {
         return R.id.container
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        if (savedInstanceState == null) {
-            navigateToWelcome()
-        }
-    }
-
-    private fun navigateToWelcome() {
-        val welcomeFragment = WelcomeFragment()
-        TransitionHelper.setDefaultTransition(welcomeFragment)
-        navigateTo(welcomeFragment, false)
+    private fun navigateToRegisterName() {
+        val registerNameFragment = RegisterNameFragment()
+        TransitionHelper.setDefaultTransition(registerNameFragment)
+        navigateTo(registerNameFragment, false)
     }
 
     override fun onBackPressed() {

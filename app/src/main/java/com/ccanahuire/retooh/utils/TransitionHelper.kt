@@ -2,6 +2,7 @@ package com.ccanahuire.retooh.utils
 
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import androidx.transition.Fade
 import androidx.transition.Slide
 import androidx.transition.Transition
 import androidx.transition.TransitionSet
@@ -10,13 +11,13 @@ abstract class TransitionHelper {
     companion object {
         fun createEnterTransition(): Transition {
             val transitionSet = TransitionSet()
-            transitionSet.addTransition(Slide(GravityCompat.END).setStartDelay(150))
+            transitionSet.addTransition(Slide(GravityCompat.END).setStartDelay(180))
             return transitionSet
         }
 
         fun createReEnterTransition(): Transition {
             val transitionSet = TransitionSet()
-            transitionSet.addTransition(Slide(GravityCompat.START).setStartDelay(150))
+            transitionSet.addTransition(Slide(GravityCompat.START).setStartDelay(180))
             return transitionSet
         }
 
@@ -30,6 +31,14 @@ abstract class TransitionHelper {
             val transitionSet = TransitionSet()
             transitionSet.addTransition(Slide(GravityCompat.END))
             return transitionSet
+        }
+
+        fun createFadeInTransition(): Transition {
+            return Fade(Fade.IN)
+        }
+
+        fun createFadeOutTransition(): Transition {
+            return Fade(Fade.OUT)
         }
 
         fun setDefaultTransition(fragment: Fragment) {
