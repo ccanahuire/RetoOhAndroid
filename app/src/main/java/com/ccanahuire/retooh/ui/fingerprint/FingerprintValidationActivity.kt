@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyPermanentlyInvalidatedException
 import android.security.keystore.KeyProperties
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.hardware.fingerprint.FingerprintManagerCompat
@@ -15,6 +16,8 @@ import androidx.core.os.CancellationSignal
 import com.ccanahuire.retooh.R
 import com.ccanahuire.retooh.model.UserData
 import com.ccanahuire.retooh.ui.HomeActivity
+import com.ccanahuire.retooh.ui.MainActivity
+import com.google.firebase.auth.FirebaseAuth
 import java.io.IOException
 import java.security.*
 import javax.crypto.Cipher
@@ -53,7 +56,14 @@ class FingerprintValidationActivity : AppCompatActivity() {
         userDataExtra = intent.getSerializableExtra(EXTRA_USER_DATA) as UserData
 
         errorTextView = findViewById(R.id.tv_error)
+        val signOutButton: Button = findViewById(R.id.btn_sign_out)
 
+        val auth = FirebaseAuth.getInstance()
+
+        signOutButton.setOnClickListener {
+            auth.signOut()
+            navigateToInitialScreen()
+        }
 
         val fingerprintManagerCompat = FingerprintManagerCompat.from(this)
         generateKey()
@@ -89,6 +99,12 @@ class FingerprintValidationActivity : AppCompatActivity() {
 
     private fun navigateToHomeScreen(userData: UserData) {
         HomeActivity.start(this, userData)
+        finish()
+    }
+
+    private fun navigateToInitialScreen() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
         finish()
     }
 

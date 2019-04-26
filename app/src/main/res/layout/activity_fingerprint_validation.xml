@@ -53,13 +53,27 @@
     <TextView
         android:id="@+id/tv_error"
         style="@style/TextAppearance.MaterialComponents.Body2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textColor="@color/textColorError"
-        android:text="@string/lang_fingerprint_validation_message"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_fingerprint"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:text="Error message is displayed here" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_sign_out"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/lang_common_action_sign_out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

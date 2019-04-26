@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Reto Android</string>
+    <string name="title_activity_welcome">Bienvenido</string>
+
+    <string name="lang_common_action_ok">Aceptar</string>
+    <string name="lang_common_action_next">Siguiente</string>
+    <string name="lang_common_action_finish">Finalizar</string>
+    <string name="lang_common_action_sign_in">Iniciar Sesión</string>
+    <string name="lang_common_action_sign_out">Cerrar Sesión</string>
+    <string name="lang_common_action_resend">Reenviar</string>
+    <string name="lang_common_action_verify">Verificar</string>
+
+    <string name="lang_common_action_logged_out">Tu sesión ha expirado</string>
+
+    <string name="lang_social_facebook_sign_in">Iniciar sesión con Facebook</string>
+
+    <string name="lang_loading_title">Un momento…</string>
+
+    <string name="lang_welcome_title">Empecemos</string>
+    <string name="lang_welcome_message">Bienvenido \"Reto Android\". En esta aplicación verás un ejemplo de Autenticación con Firebase, así como un poco de la UI material que Android nos provee.</string>
+    <string name="lang_welcome_disclaimer">Esta aplicación estará en Google Play Store por un periodo limitado de tiempo. Toda la información personal que ingreses en esta aplicación será borrada cuando esta aplicación sea retirada del mercado.</string>
+
+    <string name="lang_login_title">Iniciar sesión</string>
+    <string name="lang_login_message">Puedes iniciar sesión con tu número telefónico o mediante Facebook</string>
+    <string name="lang_login_phone_number_caption">Número telefónico</string>
+    <string name="lang_login_phone_number_validation_length">El número telefónico debe tener 9 dígitos.</string>
+
+    <string name="lang_phone_validation_title">Ingres el código</string>
+    <string name="lang_phone_validation_message">Un SMS se ha enviado a tu número telefónico %s. Por favor ingresa el código recibido para continuar.</string>
+    <string name="lang_phone_validation_code_caption">Codigo de verificación</string>
+    <string name="lang_phone_validation_code_validation_length">El código de verificación debe tener 6 dígitos.</string>
+    <string name="lang_phone_validation_code_validation_valid">El código de verificación no es válido.</string>
+    <string name="lang_phone_validation_code_unavailable">La validación de número telefónico esta temporalmente fuera de servicio, por favor intente nuevamente más tarde.</string>
+    <string name="lang_phone_validation_code_resend_message">Se ha enviado un nuevo código a tu teléfono.</string>
+
+    <string name="lang_fingerprint_validation_title">Identificación por Huella Digital</string>
+    <string name="lang_fingerprint_validation_message">Tu seguridad es muy importante para nosotros. Por favor coloque su dedo sobre el sensor de huella digital para poder validar tu identidad.</string>
+    <string name="lang_fingerprint_validation_fingerprint_mismatch">Tu huella digital no coincida con ninguna de las que está registrada en tu teléfono.</string>
+
+    <string name="lang_register_name_title">Nombre</string>
+    <string name="lang_register_name_message">Genial! Estás casi listo, solo un par de pasos más. Por favor bríndanos tu nombre.</string>
+    <string name="lang_register_name_name_caption">Nombres</string>
+    <string name="lang_register_name_lastname_caption">Apellidos</string>
+    <string name="lang_register_name_validation_name_required">Su nombre no debe estar vacío.</string>
+    <string name="lang_register_name_validation_last_name_required">Su apellido no debe estar vacío.</string>
+
+    <string name="lang_register_birthdate_title">Fecha de nacimiento</string>
+    <string name="lang_register_birthdate_message">Por favor ingrese su fecha de nacimiento para finalizar el proceso de registro.</string>
+    <string name="lang_register_birthdate_validation_required">Debes ingresar tu fecha de nacimiento.</string>
+    <string name="lang_register_birthdate_service_unavailable">El servicio está temporalmente no disponible. Por favor intente nuevamente más tarde. </string>
+
+    <string name="lang_register_birthdate_date_caption">Fecha de nacimiento</string>
+
+    <string name="lang_home_welcome">Bienvenido %s</string>
+    <string name="lang_home_message">La información que nos proporcionaste es:</string>
+    <string name="lang_home_name">Nombres: %s</string>
+    <string name="lang_home_last_name">Apellidos: %s</string>
+    <string name="lang_home_age">Edad: %d (calculado)</string>
+    <string name="lang_home_birthdate">Fecha de nacimiento: %s</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_home">Inicio</string>
+    <string name="action_settings">Configuración</string>
+</resources>

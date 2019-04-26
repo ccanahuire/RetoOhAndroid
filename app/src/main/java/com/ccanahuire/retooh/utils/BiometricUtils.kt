@@ -10,12 +10,8 @@ import androidx.core.hardware.fingerprint.FingerprintManagerCompat
 
 abstract class BiometricUtils {
     companion object {
-        fun isBiometricPromptEnabled(): Boolean {
-            return (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P)
-        }
-
         fun isSdkVersionSupported(): Boolean {
-            return (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P)
+            return (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         }
 
         fun isHardwareSupported(context: Context): Boolean {

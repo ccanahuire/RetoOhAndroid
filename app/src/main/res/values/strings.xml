@@ -1,9 +1,9 @@
 <resources>
-    <string name="facebook_app_id">402116823675078</string>
-    <string name="fb_login_protocol_scheme">fb402116823675078</string>
+    <string name="facebook_app_id" translatable="false">402116823675078</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb402116823675078</string>
 
     <string name="app_name">Reto Android</string>
-    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_activity_welcome">Welcome</string>
 
     <string name="lang_common_action_ok">Ok</string>
     <string name="lang_common_action_next">Next</string>
@@ -20,7 +20,7 @@
     <string name="lang_loading_title">Just a sec…</string>
 
     <string name="lang_welcome_title">Get Started</string>
-    <string name="lang_welcome_message">Welcome to \"Reto Android\". In this application you will see an example of Firebase authentication, as well as some interesting UI and UX that you might find interesting.</string>
+    <string name="lang_welcome_message">Welcome to \"Reto Android\". In this application you will see an example of Firebase authentication, as well as some interesting Material UI that Android provides us.</string>
     <string name="lang_welcome_disclaimer">This application will be in the Google Play Store for a limited period of time. All the personal information you provide within this application will be deleted when this app is removed from the market.</string>
 
     <string name="lang_login_title">Sign in</string>
